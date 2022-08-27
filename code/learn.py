@@ -201,4 +201,5 @@ if args.do_train:
                 log_file.write("\t VALID: {}\n".format(valid))
                 log_file.write("\t TEST: {}\n".format(test))
                 log_file.flush()
+        test = avg_both(*dataset.eval(model, 'test', 50000))
         print("\t TEST : ", test_res)
